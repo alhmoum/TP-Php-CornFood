@@ -25,6 +25,7 @@ php-cornfood/
         └── assets/
 ```
 
+<img alt="Awesome GitHub Profile Readme" src="assets/snap/productlist.png"> </img>
 
 
-
+<img alt="Awesome GitHub Profile Readme" src="assets/snap/productdetails.png"> </img>
