@@ -24,7 +24,7 @@ php-cornfood/
         ├── templates/
         └── assets/
 ```
-<img alt="capture animé " src="assets/snap/productdetails.png"> </img>
+<img alt="capture animé " src="assets/snap/gifcornfood.gif"> </img>
 
 <img alt="capture écran page produits" src="assets/snap/productlist.png"> </img>
 
