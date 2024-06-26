@@ -1,0 +1,204 @@
+/* COMMUN */
+
+
+*{
+    outline: none;
+}
+
+@font-face {
+    font-family: "rockwell";
+    src: url(../font/Rockwell.ttf);
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    font-weight: 700;
+}
+
+h2, h3{
+    font-family: "rockwell";
+}
+
+h2{
+    font-size: 2.3rem;
+}
+
+h3{
+    font-size: 1.3rem;
+}
+
+/* Class fabriquée sur le modèle bootstrap pour appliquer la couleur rose */
+.text-pink{
+    color: #EA9191;
+}
+
+/* Class fabriquée sur le modèle bootstrap pour appliquer un font-size qui n'existe pas dans bootstrap */
+.fs-7{
+    font-size: 0.85rem;
+}
+
+
+/* HEADER */
+header{
+    background-attachment: fixed; /* cela n'était pas demandé, mais je l'ai rajouté parce que j'aime bien l'effet :) */
+    background-image: url(../img/photo.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-bottom: 1px; /* nécessaire pour éviter que le triangle ne soit trop haut */
+}
+
+header .titre{
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+header .titre p{
+    font-family: "rockwell";
+}
+
+/* permet d'ajuster la largeur de l'image pour éviter qu'elle ne chevauche l'icône burger lorsque l'on est sur des écrant très petit (360px de large) */
+.navbar-brand img{
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0,0.5));
+    width: 200px;
+}
+
+/* Ce code permet de modifier la couleur de l'icône burger : stroke='rgba(255, 165, 0, 1) et de grossir les 3 trais : stroke-width='5'*/
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3Cpath stroke='rgba(255, 165, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* positionne le conteneur triangle */
+header .content-triangle{
+    margin-bottom: -8px;
+}
+
+/* code pour créer un triangle en pure css */
+header .triangle{
+    display: inline-block;
+    background-color: white;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    height: 50px;
+    width: 85px;
+
+    /* Autre technique un peu désuette */
+    /* display: inline-block;
+    height: 0px;
+    width: 0px;
+    border-right: 40px solid transparent;
+    border-bottom: 40px solid White;
+    border-left: 40px solid transparent; */
+}
+
+/* MAIN INDEX */
+
+/* Permet de positionner l'image de fond derrière le titre "Du naturel au goûté" et de donner du volume */
+.concept .titre{
+    background-color: rgb(237, 197, 102);
+    background-image: url(../img/grain.png);
+    background-position: top right; 
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    /* donne du volume */
+    padding-top: 96px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+}
+
+.concept article img{
+    width: 50px;
+}
+
+/* section decouvrir */
+/* J'ai fait ma propre ombre parce que celles proposées par bootstrap n'étaient pas satisfaisantes */
+.decouvrir .shadow-decouvrir{
+    border-radius: 30px; /* pareil pour le border radius */
+    box-shadow: 0 5px 5px 0 rgba(0,0,0,0.2);
+    padding-top: 1px; /* nécéssaire pour que le margin-top appliqué sur le 1er élément qui se touvent dans decouvrir ne s'échape */
+    padding-bottom: 1px; /* nécéssaire pour que le margin-top appliqué sur le dernier élément qui se touvent dans decouvrir ne s'échape */
+}
+
+.decouvrir article img{
+    width: 200px; /* on fixe la taille des images produits parce que leur taille est identique quelque soit la largeur de l'écran */
+}
+
+/* MAIN PRODUITS */
+.carousel-caption{
+    background-color: rgba(0,0,0,0.2); /* pour ajouter un fond de couleur transparent sous les légende du carousel. On s'appuie tout simplement sur la class proposée par bootstrap (cf code HTML) */
+}
+
+.produits article img{
+    width: 200px; /* on fixe la taille des images produits parce que leur taille est identique quelque soit la largeur de l'écran */
+}
+
+/* MAIN PRODUIT SEUL */
+/* Components pagination détourné pour faire la sélection de la quantité */
+.quantity input[type="text"]{
+    width: 34px; /* Je suis obligé de fixer la largeur de l'input */
+}
+
+.price{
+    font-family: "rockwell";
+    font-size: 1.2rem;
+}
+
+.composition-list{
+    list-style: none; /* je vire les puces de la liste */
+}
+
+/* FOOTER */
+footer{
+    background: linear-gradient(to top right, #96859e, 20%, rgba(234, 145, 145, 1), #e6b331);
+    padding-top: 100px;
+}
+
+footer img[alt="contact"]{
+    width: 55%; /* cette dimention permet d'avoir le second trait verticale de l'image toujours ua millieux */
+}
+
+footer .footer-icons img{
+    width: 50px;
+}
+
+footer form input, footer form textarea{
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 0;
+    width: 100%;
+}
+
+footer form textarea{
+    border-radius: 30px;
+    height: 275px;
+    resize: none;
+}
+
+footer form ::placeholder{
+    color: white;
+}
+
+footer form div:last-of-type{ /* je vise la dernière div du formulaire qui contient le bouton de validation */
+    margin-top: -38px;
+}
+
+footer form [type="submit"]{
+    background-color: rgb(227, 142, 142);
+}
+
+footer p{ 
+    border-top: 1px solid #fff;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 665px;
+}
+
+/* MEDIA QUERIES */
+@media  screen and (min-width:992px) {
+    /* Class fabriquée sur le modèle bootstrap pour appliquer une bordure droite en tirets espacés */
+    .decouvrir .border-dashed-end{
+        border-right: 1px dashed black;
+    }
+}

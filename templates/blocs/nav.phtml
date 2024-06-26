@@ -1,0 +1,24 @@
+            <!-- Composant navbar de Bootstrap -->
+            <!-- On a retirer la class bg-light sur la balise nav, pour obtenir un fond transparent. La class navbar-expand-... permet de faire apparaître le bouton burger au point de rupture que vous souhaitez (par défaut c'est lg) -->
+            <nav class="navbar navbar-expand-md navbar-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#"> <img src="assets/img/logo.png" alt="Logo CornFood"> </a>
+                    <!-- Icone burger -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Ici la class collapse applique un display:flex.
+                    Du coup, pour forcer l'item à aller à droite il faut chercher une class boostrap qui s'appelle justify-content-end-->
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup"> <!-- conteneur flex -->
+                        <div class="navbar-nav"> <!-- item -->
+                            <a class="nav-link text-white active" aria-current="page" href="index.php">Home</a>
+                            <a class="nav-link text-white" href="#concept">Concept</a>
+                            <a class="nav-link text-white" href="produits.php">produits</a>
+                            <a class="nav-link text-white" href="#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>

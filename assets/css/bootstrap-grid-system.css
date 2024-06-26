@@ -1,0 +1,71 @@
+/* POUR VOIR LE SYSTEME DE GRILLE A 12 COLONNES DE BOOTSTRAP */
+.container::before,
+.row::after,
+*[class^="col-"]::before,
+.navbar::before,
+.breadcrumb::before,
+.d-flex::before,
+.carousel::before{
+    content :attr(class);
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    padding: 0 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: fit-content;
+}
+
+.container{
+    border: 6px solid blue;
+    padding-top: 24px;
+    position: relative;
+}
+
+.container::before{
+    background-color: blue;
+}
+
+.row{
+    background:repeating-linear-gradient(90deg, #ffd5d6 0%, #ffd5d6 8.33333333%, #dea0a1 8.33333333%, #dea0a1 16.66666666%);
+    border: 5px solid green;
+    padding-top: 24px;
+    position: relative;
+}
+
+.row::after{
+    background-color: green;
+}
+
+*[class^="col-"]{
+    border: 4px solid rgb(77, 67, 67);
+    padding-top: 24px;
+    /* opacity: 80%; */
+    position: relative;
+}
+
+*[class^="col-"]::before{
+    background-color: rgb(77, 67, 67);
+}
+
+.navbar{
+    border: 3px solid blueviolet;
+}
+
+.d-flex, .breadcrumb, .carousel{
+    border: 3px solid blueviolet;
+    padding-top: 24px;
+    /* opacity: 80%; */
+    position: relative;
+}
+
+.navbar::before,
+.breadcrumb::before,
+.carousel::before{
+    background-color: blueviolet;
+}
+
+.d-flex::before{
+    background-color: blueviolet;
+}

@@ -1,0 +1,486 @@
+*{  
+    background-color: rgba(255,0,0,.2);
+    border: 2px solid rgba(255,0,0,.2);
+    position: relative !important;
+}
+
+*:not(a){
+    padding-top: 24px !important;
+}
+
+* * { 
+    background-color: rgba(0,255,0,.2); 
+    border: 2px solid rgba(0,255,0,.2);
+}
+* * * { 
+    background-color: rgba(0,0,255,.2); 
+    border: 2px solid rgba(0,0,255,.2);
+}
+* * * * { 
+    background-color: rgba(255,0,255,.2); 
+    border: 2px solid rgba(255,0,255,.2);
+}
+* * * * * { 
+    background-color: rgba(0,255,255,.2); 
+    border: 2px solid rgba(0,255,255,.2);
+}
+* * * * * * { 
+    background-color: rgba(255,255,0,.2); 
+    border: 2px solid rgba(255,255,0,.2);
+}
+* * * * * * * { 
+    background-color: rgba(255,0,0,.2); 
+    border: 1px solid rgba(255,0,0,.2);
+}
+* * * * * * * * { 
+    background-color: rgba(0,255,0,.2);
+    border: 1px solid rgba(0,255,0,.2); 
+}
+* * * * * * * * * { 
+    background-color: rgba(0,0,255,.2); 
+    border: 1px solid rgba(0,0,255,.2);
+}
+
+/* BALISES HTML */
+
+/* A */
+a::after{
+    content: "<a>";
+}
+
+abbr::after{
+    content: "<abbr>";
+}
+
+address::after{
+    content: "<address>";
+}
+
+area::after{
+    content: "<area>";
+}
+
+article::after{
+    content: "<article>";
+}
+
+aside::after{
+    content: "<aside>";
+}
+
+audio::after{
+    content: "<audio>";
+}
+
+
+/* B */
+b::after{
+    content: "<b>";
+}
+
+base::after{
+    content: "<base>";
+}
+
+bdo::after{
+    content: "<bdo>";
+}
+
+bdi::after{
+    content: "<bdi>";
+}
+
+blockquote::after{
+    content: "<blockquote>";
+}
+
+body::after{
+    content: "<body>";
+}
+
+/* br::after{
+    content: "<br>";
+} */
+
+button::after{
+    content: "<button>";
+}
+
+/* C */
+canvas::after{
+    content: "<canvas>";
+}
+
+caption::after{
+    content: "<caption>";
+}
+
+cite::after{
+    content: "<cite>";
+}
+
+code::after{
+    content: "<code>";
+}
+
+col::after{
+    content: "<col>";
+}
+
+colgroup::after{
+    content: "<colgroup>";
+}
+
+command::after{
+    content: "<command>";
+}
+
+/* D */
+datalist::after{
+    content: "<datalist>";
+}
+
+del::after{
+    content: "<del>";
+}
+
+details::after{
+    content: "<details>";
+}
+
+div::after{
+    content: "<div>";
+}
+
+dl::after{
+    content: "<dl>";
+}
+
+dt::after{
+    content: "<dt>";
+}
+
+/* E */
+em::after{
+    content: "<em>";
+}
+
+embed::after{
+    content: "<embed>";
+}
+
+/* F */
+fieldset::after{
+    content: "<fieldset>";
+}
+
+figcaption::after{
+    content: "<figcaption>";
+}
+
+figure::after{
+    content: "<figure>";
+}
+
+footer::after{
+    content: "<footer>";
+}
+
+form::after{
+    content: "<form>";
+}
+
+/* H */
+h1::after{
+    content: "<h1>";
+}
+
+h2::after{
+    content: "<h2>";
+}
+
+h3::after{
+    content: "<h3>";
+}
+
+h4::after{
+    content: "<h4>";
+}
+
+h5::after{
+    content: "<h5>";
+}
+
+h6::after{
+    content: "<h6>";
+}
+
+header::after{
+    content: "<header>";
+}
+
+/* hr::after{
+    content: "<hr>";
+} */
+
+html::after{
+    content: "<html>";
+}
+
+/* I */
+i::after{
+    content: "<i>";
+}
+
+iframe::after{
+    content: "<iframe>";
+}
+
+/* img::after{
+    content: "<img>";
+} */
+
+img{
+    background-color: #e5e5f7;
+    background-size: 10px 10px;
+    background-image: repeating-linear-gradient(45deg, #444cf7 0, #444cf7 1px, #e5e5f7 0, #e5e5f7 50%);
+    opacity: 0.8;
+    padding-top: 0 !important;
+}
+
+input[type="radio"], 
+input[type="checkbox"]{
+    appearance: none;
+    display: inline-block;
+}
+
+input[type="radio"]::after{
+    content: "<radio>";
+}
+
+input[type="checkbox"]::after{
+    content: "<checkbox>";
+}
+
+/* input::after{
+    content: "<input>";
+} */
+
+ins::after{
+    content: "<ins>";
+}
+
+/* K */
+keygen::after{
+    content: "<keygen>";
+}
+
+kbd::after{
+    content: "<kbd>";
+}
+
+/* L */
+label::after{
+    content: "<label>";
+}
+
+legend::after{
+    content: "<legend>";
+}
+
+li::after{
+    content: "<li>";
+}
+
+/* M */
+main::after{
+    content: "<main>";
+}
+
+map::after{
+    content: "<map>";
+}
+
+mark::after{
+    content: "<mark>";
+}
+
+menu::after{
+    content: "<menu>";
+}
+
+meter::after{
+    content: "<meter>";
+}
+
+/* N */
+nav::after{
+    content: "<nav>";
+}
+
+/* O */
+object::after{
+    content: "<object>";
+}
+
+ol::after{
+    content: "<ol>";
+}
+
+optgroup::after{
+    content: "<optgroup>";
+}
+
+option::after{
+    content: "<option>";
+}
+
+output::after{
+    content: "<output>";
+}
+
+/* P */
+p::after{
+    content: "<p>";
+}
+
+param::after{
+    content: "<param>";
+}
+
+pre::after{
+    content: "<param>";
+}
+
+progress::after{
+    content: "<progress>";
+}
+
+/* Q */
+q::after{
+    content: "<q>";
+}
+
+/* R */
+rp::after{
+    content: "<rp>";
+}
+
+rt::after{
+    content: "<rt>";
+}
+
+ruby::after{
+    content: "<ruby>";
+}
+
+/* S */
+s::after{
+    content: "<s>";
+}
+
+samp::after{
+    content: "<samp>";
+}
+
+section::after{
+    content: "<section>";
+}
+
+select::after{
+    content: "<select>";
+}
+
+small::after{
+    content: "<small>";
+}
+
+span::after{
+    content: "<span>";
+}
+
+strong::after{
+    content: "<span>";
+}
+
+sub::after{
+    content: "<sub>";
+}
+
+summary::after{
+    content: "<summary>";
+}
+
+sup::after{
+    content: "<sup>";
+}
+
+/* T */
+table::after{
+    content: "<table>";
+}
+
+tbody::after{
+    content: "<tbody>";
+}
+
+td::after{
+    content: "<td>";
+}
+
+textarea::after{
+    content: "<textarea>";
+}
+
+tfoot::after{
+    content: "<tfoot>";
+}
+
+th::after{
+    content: "<th>";
+}
+
+thead::after{
+    content: "<thead>";
+}
+
+tr::after{
+    content: "<tr>";
+}
+
+time::after{
+    content: "<time>";
+}
+
+/* U */
+u::after{
+    content: "<u>";
+}
+
+ul::after{
+    content: "<ul>";
+}
+
+/* V */
+var::after{
+    content: "<var>";
+}
+
+video::after{
+    content: "<video>";
+}
+
+/* W */
+
+a::after, abbr::after, address::after, area::after, article::after, aside::after, audio::after, b::after, base::after, bdo::after, bdi::after, blockquote::after, body::after, button::after, canvas::after, caption::after, cite::after, code::after, col::after, colgroup::after, command::after, datalist::after, dd::after, del::after, details::after, div::after, dl::after, dt::after, em::after, embed::after, fieldset::after, figcaption::after, figure::after, footer::after, form::after, h1::after, h2::after, h3::after, h4::after, h5::after, h6::after, header::after, html::after, i::after, iframe::after, ins::after, keygen::after, kbd::after, label::after, legend::after, li::after, main::after, map::after, mark::after, menu::after, meter::after, nav::after, object::after, ol::after, optgroup::after, option::after, output::after, p::after, param::after, pre::after, progress::after, q::after, rp::after,
+rt::after, ruby::after, s::after, samp::after, section::after, select::after, small::after, span::after, strong::after, sub::after, summary::after, sup::after, table::after, tbody::after, td::after, textarea::after, tfoot::after, th::after, thead::after, time::after, u::after, ul::after, var::after, video::after, ::before
+{
+    background-color: #aaa;
+    color: azure;
+    font-size: 12px;
+    right: 0;
+    padding: 0px 5px;
+    position: absolute;
+    top: 0;
+    z-index: 10000;
+}

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include './templates/blocs/head.phtml' ?>
+
+<!-- Quand vous avez plusieurs pages dans votre site, pensez à donner un id (ou une classe unique) pour être en mesure de différencier les page dans votre css qui sera commun -->
+<body id="page-produit-single">
+    <!-- HEADER -->
+    <header>
+        <div class="container">
+
+            <?php include './templates/blocs/nav.phtml' ?>
+
+            <div class="titre text-center text-white">
+                <h1 class="mb-4 text-uppercase">Food</h1>
+            </div>
+
+            <!-- Pensez au triangle -->
+            <div class="content-triangle text-center">
+                <div class="triangle"></div> <!-- voir le css -->
+            </div>
+        </div>
+    </header>
+
+    <!-- FOOTER -->
+    <main>
+        <!-- Fil d'arianne -->
+        <div id="breadcrumb">
+            <div class="container">
+                <nav class="mt-3" aria-label="breadcrumb">
+                    <menu class="breadcrumb px-3 px-sm-0">
+                        <li class="breadcrumb-item">
+                            <a class="text-black text-decoration-none" href="index.php">Cornfood</a>
+                        </li>
+
+                        <li class="breadcrumb-item">
+                            <a class="text-black text-decoration-none" href="produits.php">Produits</a>
+                        </li>
+
+                        <li class="breadcrumb-item active" aria-current="page"><?=$product['name']?></li>
+                    </menu>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Fiche produit avec formulaire intégré dedans -->
+        <article id="produit" class="mt-5">
+            <div class="container">
+                <!-- Après réflexion et une analyse plus approfondi de la page, j'ai décidé qu'il serait mieux d'opter pour une balise form à ce niveau afin de collecter les choix de l'utilisateur sous forme de données envoyer en BDD -->
+                <form action="#" method="post">
+                    <!-- image produit à gauche du formulaire -->
+                    <div class="row">
+                        <div class="col-12 col-lg-3">
+                            <div class="text-center">
+                                <img class="mw-100 w-auto" src="assets/img/products/<?=$product['image']?>" alt="<?=$product['name']?>">
+                            </div>
+                        </div>
+    
+                        <!-- produit au centre du formulaire -->
+                        <div class="col-12 col-lg-6">
+                            <h2><?=$product['name']?></h2>
+    
+                            <h3>Quantité</h3>
+    
+                            <!-- J'ai opté pour le components > Button group : Basic example. J'ai changé et ajouté quelques class bootstrap pour parfaire le tout et ajouté la class quantity pour m'appuyer dessus en CSS afin de modifier la largeur de l'input-->
+                            <div class="mb-3 btn-group quantity" role="group" aria-label="Quantity">
+                                <button type="button" class="btn btn-outline-secondary text-black bg-light">-</button>
+    
+                                <!-- j'ai remplacé la balise button par une balise input de type text à laquelle j'ai ajouté les attributs name, readonly et value="1" afin de pouvoir récupérer la valeur en BDD. Les développeur backend s'occuperont de gérer le changement de quantité avec du javascript sur les boutons + et - -->
+                                <input type="text" name="quantity" class="btn btn-outline-secondary text-black" value="1"
+                                    readonly>
+    
+                                <button type="button" class="btn btn-outline-secondary text-black bg-light">+</button>
+                            </div>
+                        </div>
+    
+                        <!-- prix à droite du formulaire -->
+                        <div class="col-12 col-lg-3">
+                            <p class="price border p-3">
+                                Prix : <br>
+                                <?=number_format($product['price'], 2, ',', ' ')?>€<br>
+    
+                                <!-- ce bouton valide le formulaire. Il doit donc impérativement être à l'intérieur de la balise form -->
+                                <button class="btn btn-danger w-100 mt-3" type="submit">Acheter</button>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row mt-4">
+                    <!-- description du produit -->
+                    <div class="col-12 col-lg-9">
+                        <h3 class="mb-4">Description du produit</h3>
+
+                        <?=$product['description']?>
+                    </div>
+
+                    <!-- composition du produit -->
+                    <div class="col-12 col-lg-3">
+                        <h3 class="mb-4">Composition</h3>
+
+                        <ul class="composition-list ps-0 fs-7">
+                            <?php foreach($product['ingredients'] as $ingredient) : ?>
+                            <li><?=$ingredient?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- section des commentaires des consommateurs -->
+        <section id="commentaires" class="mt-5">
+            <div class="container">
+                <h3>Les avis de nos consommateurs</h3>
+
+                <div class="row mt-5">
+                    <!-- Les étoiles pour la notation moyenne -->
+                    <div class="col-12 col-lg-3">
+                        <p class="fs-7">
+                            <?=str_repeat($star_1, $scoreMoy)?>
+                            <?=str_repeat($star_0, 5 - $scoreMoy)?>
+                            <span class="align-middle ms-3"><?=count($product['customers_comm'])?> avis</span>
+                        </p>
+                    </div>
+
+                    <!-- La liste des commentaire -->
+                    <div class="col-12 col-lg-6 pb-5">
+                        <?php foreach($product['customers_comm'] as $comm) : ?>
+                        <article class="row mb-4">
+                            <!-- Ici c'est assez chaud à gérer avec bootstrap parce qu'il faut tester sur tous les media queries afin de voir si cela se comporte correctement avec le potionnement de l'image de gauche et le paragraphe à droite. Et l'on voit qu'il faut prévoir plusieurs changements de nombre de colonnes en fonction de la largeur de l'écran. -->
+                            <div class="col-2 col-md-1 col-lg-2 col-xxl-1">
+                                <img src="assets/img/user-frame-33.png" alt="">
+                            </div>
+
+                            <!-- Et il faut penser à équilibrer là bien entendu pour toujours avoir au maximum 12 colonnes. -->
+                            <div class="col-10 col-md-11 col-lg-10 col-xxl-11">
+                                <h4><?=$comm['name']?></h4>
+                                <p>
+                                    <?=str_repeat($star_1, $comm['score'])?>
+                                    <?=str_repeat($star_0, 5 - $comm['score'])?>
+                                </p>
+                                <p class="fs-7"><?=$comm['commentary']?></p>
+                            </div>
+                        </article>
+                        <?php endforeach; ?>
+                    </div>
+
+                    <!-- Un div vide pour le positionnement en desktop -->
+                    <div class="col-12 col-lg-3"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <?php include './templates/blocs/footer.phtml' ?>
+    <?php include './templates/blocs/script.phtml' ?>
+
+</body>
+
+</html>
